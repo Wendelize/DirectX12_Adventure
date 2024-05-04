@@ -16,10 +16,40 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="Source\PreCompiledHeaders">
+      <UniqueIdentifier>{5257c6d5-7cf7-4117-b902-8285bf4b3979}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\WinMain.cpp">
       <Filter>Source\Private</Filter>
     </ClCompile>
+    <ClCompile Include="Source\PreCompiledHeaders.cpp">
+      <Filter>Source\PreCompiledHeaders</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\PreCompiledHeaders.h">
+      <Filter>Source\PreCompiledHeaders</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="resource1.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DirectX12_Adventure1.rc">
+      <Filter>Resources</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\Icons\this_is_fine_dog_icon.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="Resources\Icons\this_is_fine_dog_icon.ico">
+      <Filter>Resources</Filter>
+    </Image>
   </ItemGroup>
 </Project>

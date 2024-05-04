@@ -1,12 +1,12 @@
-#include <windows.h>
+#include "PreCompiledHeaders.h"
 
-#define MAX_NAME_SIZE 256
-#define HInstance() GetModuleHandle(NULL)
 WCHAR WindowClass[MAX_NAME_SIZE];
 WCHAR WindowTitle[MAX_NAME_SIZE];
 
 INT WindowWidth;
 INT WindowHeight;
+
+HICON hIcon;
 
 LRESULT CALLBACK WindowProcess(HWND hWnd, UINT msg, WPARAM wparam, LPARAM lparam) 
 {
@@ -27,6 +27,7 @@ int CALLBACK WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 	wcscpy_s(WindowTitle, TEXT("Hello Window!"));
 	WindowWidth = 1200;
 	WindowHeight = 800;
+	hIcon = LoadIcon(HInstance(), MAKEINTRESOURCE(IDI_MAINICON));
 
 	// Create a Window Class
 	WNDCLASSEX window;
@@ -39,8 +40,8 @@ int CALLBACK WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 	window.hCursor = LoadCursor(nullptr, IDC_ARROW);
 	window.hbrBackground = (HBRUSH)GetStockObject(NULL_BRUSH);
 
-	window.hIcon = LoadIcon(0, IDI_APPLICATION);
-	window.hIconSm = LoadIcon(0, IDI_APPLICATION);
+	window.hIcon = hIcon;
+	window.hIconSm = hIcon;
 
 	window.lpszClassName = WindowClass;
 	window.lpszMenuName = nullptr;
