@@ -23,8 +23,9 @@ LRESULT CALLBACK WindowProcess(HWND hWnd, UINT msg, WPARAM wparam, LPARAM lparam
 int CALLBACK WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 {
 	// Init Global Variables
-	wcscpy_s(WindowClass, TEXT("Hello Class!"));
-	wcscpy_s(WindowTitle, TEXT("Hello Window!"));
+	LoadString(HInstance(), IDS_GAMENAME, WindowTitle, MAX_NAME_SIZE);
+	LoadString(HInstance(), IDS_WINDOWCLASS, WindowClass, MAX_NAME_SIZE);
+
 	WindowWidth = 1200;
 	WindowHeight = 800;
 	hIcon = LoadIcon(HInstance(), MAKEINTRESOURCE(IDI_MAINICON));
