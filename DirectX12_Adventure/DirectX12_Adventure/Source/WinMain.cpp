@@ -8,6 +8,18 @@ WCHAR WindowTitle[MAX_NAME_SIZE];
 INT WindowWidth;
 INT WindowHeight;
 
+LRESULT CALLBACK WindowProcess(HWND hWnd, UINT msg, WPARAM wparam, LPARAM lparam) 
+{
+	switch (msg) {
+		// DESTROY WINDOW
+		case WM_DESTROY: 
+			PostQuitMessage(0); 
+			break;
+	}
+
+	return DefWindowProc(hWnd, msg, wparam, lparam);
+}
+
 int CALLBACK WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 {
 	// Init Global Variables
@@ -35,7 +47,7 @@ int CALLBACK WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
 
 	window.hInstance = HInstance();
 
-	window.lpfnWndProc = DefWindowProc;
+	window.lpfnWndProc = WindowProcess;
 
 	RegisterClassEx(&window);
 
