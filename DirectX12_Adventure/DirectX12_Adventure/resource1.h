@@ -3,7 +3,6 @@
 // Used by DirectX12_Adventure1.rc
 //
 #define IDI_MAINICON                    101
-#define IDI_ICON1                       102
 
 // Next default values for new objects
 // 
